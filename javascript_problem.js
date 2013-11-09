@@ -1,35 +1,37 @@
 $(document).ready(function(){
-  console.log("this is working");
   $.getJSON("example.json", function( data ) {
       var plans = [];
       plans.push(fetchKeys(data[0]));
+      data = sortByCopay(data);
       $.each(data, function( key, val ){       
-        console.log(makeRow(val));
-        // var row = "<tr>";
-        // plans.push("<td>'" + val["carrierName"] + "'</td>");
+        plans.push(makeRow(val));       
       });
 
-      $("<ul/>", {
-        "class": "my-new-list",
+      $("<table/>", {
+        "class": "insurance-plans",
         html: plans.join("")
       }).appendTo("body");
   });
 })
 
-var fetchKeys = function(jsonObject){
-  var headers = "<tr>";
-    for(var key in jsonObject){
-      headers += "<th>'" + key + "'</th>";
-    }
-  headers += "</tr>";
-  return headers;
-}
-
-var makeRow = function(jsonObject){
-  var row = "<tr>";
-  for(var key in jsonObject){
-    row += "<td>'" + jsonObject[key] + "'</td>";
+  var fetchKeys = function(jsonObject){
+    var headers = "<tr>";
+      for(var key in jsonObject){
+        headers += "<th>'" + key + "'</th>";
+      }
+    headers += "</tr>";
+    return headers;
   }
-  row += "</tr>"
-  return row;
-}
+
+  var makeRow = function(jsonObject){
+    var row = "<tr>";
+    for(var key in jsonObject){
+      row += "<td>'" + jsonObject[key] + "'</td>";
+   }
+    row += "</tr>"
+    return row;
+  }
+
+  var sortByCopay = function(jsonObject){
+    
+  }
