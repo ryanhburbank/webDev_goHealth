@@ -2,9 +2,9 @@ $(document).ready(function(){
   $.getJSON("example.json", function( data ) {
       var plans = [];
       plans.push(fetchKeys(data[0]));
-      data = sortByCopay(data);
+      data = orderByCopay(data);
       $.each(data, function( key, val ){       
-        plans.push(makeRow(val));       
+        plans.push(makeRow(val["value"]));       
       });
 
       $("<table/>", {
@@ -32,6 +32,14 @@ $(document).ready(function(){
     return row;
   }
 
-  var sortByCopay = function(jsonObject){
-    
+  var orderByCopay = function(jsonObject){
+    var values = [];
+    for(var i in jsonObject){
+      values.push({key: i, value: jsonObject[i]});
+    }
+    values.sort(function(a,b){ 
+      return (a.value["copay"] - b.value["copay"]);
+    });
+    return values;
   }
+
