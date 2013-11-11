@@ -1,28 +1,24 @@
+table {
+  border-collapse: collapse;
+}
+
+th {
+  padding: 2px 4px 2px 4px;
+}
+
+td {
+  text-align: left;
+  padding: 3px 4px 2px 4px;
+}
+
 .header {
   background: #F97C00;
   color: white;
   text-transform: capitalize;
 }
 
-td {
-  text-align: left;
-  padding: 2px;
-}
-
-td.copay {
+td.copay, td.premium, td.annualLimit {
   text-align: right;
-}
-
-td.premium {
-  text-align: right;
-}
-
-td.annualLimit {
-  text-align: right;
-}
-
-th {
-  padding: 2px 4px 2px 4px;
 }
 
 .odd {
@@ -32,15 +28,3 @@ th {
 .even {
   background: #FDFDFF;
 }
-
-table {
-  border-collapse: collapse;
-}
-
-/*tbody tr {
-  display: table-row;
-}*/
-
-/*tbody td {
-  display: table-cell;
-}*/

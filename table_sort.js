@@ -1,3 +1,7 @@
+  $(document).ready(function(){
+    $(".copay, .premium, .annualLimit").prepend('$');
+  });
+
   $.getJSON("example.json", function(data) {
       var healthPlans = [];
       healthPlans.push(makeHeader(data[0]));
