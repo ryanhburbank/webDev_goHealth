@@ -1,0 +1,46 @@
+.header {
+  background: #F97C00;
+  color: white;
+  text-transform: capitalize;
+}
+
+td {
+  text-align: left;
+  padding: 2px;
+}
+
+td.copay {
+  text-align: right;
+}
+
+td.premium {
+  text-align: right;
+}
+
+td.annualLimit {
+  text-align: right;
+}
+
+th {
+  padding: 2px 4px 2px 4px;
+}
+
+.odd {
+  background: #DDEFFF;
+}
+
+.even {
+  background: #FDFDFF;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+/*tbody tr {
+  display: table-row;
+}*/
+
+/*tbody td {
+  display: table-cell;
+}*/

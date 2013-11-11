@@ -1,10 +1,8 @@
-test("sorting logic", function(){
+test("Sorting logic", function(){
   var orderedPlans = orderByCopay(makeJsonObject());
-  console.log(orderedPlans[0]);
-  console.log(orderedPlans[0].value["copay"]);
-  deepEqual(orderedPlans[0].value["copay"], 1, "The lowest copay is first");
-  deepEqual(orderedPlans[2].value["copay"], 10, "The highest copay is last");
-  deepEqual(orderedPlans[1].value["copay"], 5, "The middle copay is in the middle");
+  deepEqual(orderedPlans[0].value["copay"], 1, "The lowest copay is listed first.");
+  deepEqual(orderedPlans[2].value["copay"], 10, "The highest copay is listed last.");
+  deepEqual(orderedPlans[1].value["copay"], 5, "The middle copay is listed in the middle.");
 });
 
 function MockObject(number){
