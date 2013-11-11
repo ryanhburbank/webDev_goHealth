@@ -6,12 +6,12 @@
       var healthPlans = [];
       healthPlans.push(makeHeader(data[0]));
       sortedData = orderByCopay(data);
-      $.each(sortedData, function( key, val ){  
-        if (key % 2 == true){  
-          healthPlans.push(makeRow("even",val["value"]));       
+      $.each(sortedData, function( index, object ){  
+        if (index % 2 == true){  
+          healthPlans.push(makeRow("even",object));       
         }
         else {
-          healthPlans.push(makeRow("odd",val["value"]));
+          healthPlans.push(makeRow("odd",object));
         }
       });
       makeTable(healthPlans);
@@ -20,10 +20,10 @@
   var orderByCopay = function(jsonObject){
     var values = [];
     for(var i in jsonObject){
-      values.push({ value: jsonObject[i]});
+      values.push(jsonObject[i]);
     }
     values.sort(function(a,b){ 
-      return (a.value["copay"] - b.value["copay"]);
+      return (a["copay"] - b["copay"]);
     });
     return values;
   }
